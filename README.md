@@ -41,7 +41,7 @@ for you.
 Usage examples:
 
 ```jl
-julia> using Unitful.DefaultUnits, UnitfulUS
+julia> using Unitful.DefaultSymbols, UnitfulUS
 
 julia> us"gal" == UnitfulUS.gal_us
 true
