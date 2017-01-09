@@ -6,7 +6,8 @@
 
 [![codecov.io](http://codecov.io/github/ajkeller34/UnitfulUS.jl/coverage.svg?branch=master)](http://codecov.io/github/ajkeller34/UnitfulUS.jl?branch=master)
 
-A supplemental units package for [Unitful](https://github.com/ajkeller34/Unitful.jl.git).
+A supplemental units package for [Unitful 0.1.0](https://github.com/ajkeller34/Unitful.jl.git)
+or later.
 
 ## Defined units
 
