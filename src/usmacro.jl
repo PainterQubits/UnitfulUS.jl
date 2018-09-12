@@ -20,7 +20,7 @@ julia> 1.0us"syd" - 1.0u"yd"
 ```
 """
 macro us_str(unit)
-    ex = parse(unit)
+    ex = Meta.parse(unit)
     esc(replace_value(ex))
 end
 
