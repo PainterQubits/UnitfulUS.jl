@@ -1,7 +1,5 @@
 """
-```
-macro us_str(unit)
-```
+    macro us_str(unit)
 
 String macro to easily recall U.S. customary units located in the `UnitfulUS`
 package. Although all unit symbols in that package are suffixed with `_us`,
@@ -20,7 +18,7 @@ julia> 1.0us"syd" - 1.0u"yd"
 ```
 """
 macro us_str(unit)
-    ex = parse(unit)
+    ex = Meta.parse(unit)
     esc(replace_value(ex))
 end
 
@@ -35,7 +33,7 @@ function replace_value(ex::Expr)
                 ex.args[i]=replace_value(ex.args[i])
             end
         end
-        return ex
+        return Core.eval(@__MODULE__, ex)
     elseif ex.head == :tuple
         for i=1:length(ex.args)
             if typeof(ex.args[i])==Symbol
@@ -44,7 +42,7 @@ function replace_value(ex::Expr)
                 error("only use symbols inside the tuple.")
             end
         end
-        return ex
+        return Core.eval(@__MODULE__, ex)
     else
         error("Expr head $(ex.head) must equal :call or :tuple")
     end
@@ -55,16 +53,17 @@ dottify(s) = s
 
 function replace_value(sym::Symbol)
     s = Symbol(sym, :_us)
-    if !isdefined(UnitfulUS, s)
+    if !(isdefined(UnitfulUS, s) && ustrcheck_bool(getfield(UnitfulUS, s)))
         error("Symbol $s could not be found in UnitfulUS.")
     end
 
-    expr = Expr(:(.), dottify(fullname(UnitfulUS)...), QuoteNode(s))
-    return :(UnitfulUS.ustrcheck($expr))
+    return getfield(UnitfulUS, s)
 end
 
 replace_value(literal::Number) = literal
 
-ustrcheck(x::Unitful.Unitlike) = x
-ustrcheck(x::Unitful.Quantity) = x
-ustrcheck(x) = error("Symbol $x is not a unit or quantity.")
+ustrcheck_bool(x::Unitful.Number) = true
+ustrcheck_bool(x::Unitful.Unitlike) = true
+ustrcheck_bool(x::Unitful.Quantity) = true
+ustrcheck_bool(x::Unitful.MixedUnits) = true
+ustrcheck_bool(x) = false
