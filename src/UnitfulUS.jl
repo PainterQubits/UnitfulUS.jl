@@ -22,7 +22,7 @@ export @us_str
 
 # Dry volumes
 # Exact but the fraction is awful; will fix later
-@unit drypt_us    "dryptᵘˢ"   USDryPint   550.6104713575*Unitful.ml^3   false
+@unit drypt_us    "dryptᵘˢ"   USDryPint   550.6104713575*Unitful.ml     false
 @unit dryqt_us    "dryqtᵘˢ"   USDryQuart        2drypt_us               false
 @unit pk_us       "pkᵘˢ"      USPeck            8dryqt_us               false
 @unit bushel_us   "buᵘˢ"      USBushel          4pk_us                  false
