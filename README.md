@@ -1,10 +1,10 @@
 # UnitfulUS
 
-[![Build Status](https://travis-ci.org/ajkeller34/UnitfulUS.jl.svg?branch=master)](https://travis-ci.org/ajkeller34/UnitfulUS.jl)
-[![Coverage Status](https://coveralls.io/repos/github/ajkeller34/UnitfulUS.jl/badge.svg?branch=master)](https://coveralls.io/github/ajkeller34/UnitfulUS.jl?branch=master)
-[![codecov.io](http://codecov.io/github/ajkeller34/UnitfulUS.jl/coverage.svg?branch=master)](http://codecov.io/github/ajkeller34/UnitfulUS.jl?branch=master)
+[![Build Status](https://travis-ci.org/PainterQubits/UnitfulUS.jl.svg?branch=master)](https://travis-ci.org/PainterQubits/UnitfulUS.jl)
+[![Coverage Status](https://coveralls.io/repos/github/PainterQubits/UnitfulUS.jl/badge.svg?branch=master)](https://coveralls.io/github/PainterQubits/UnitfulUS.jl?branch=master)
+[![codecov.io](http://codecov.io/github/PainterQubits/UnitfulUS.jl/coverage.svg?branch=master)](http://codecov.io/github/PainterQubits/UnitfulUS.jl?branch=master)
 
-A supplemental units package for [Unitful 0.1.0](https://github.com/ajkeller34/Unitful.jl.git)
+A supplemental units package for [Unitful 0.1.0](https://github.com/PainterQubits/Unitful.jl.git)
 or later.
 
 ## Defined units
