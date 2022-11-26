@@ -48,9 +48,6 @@ function replace_value(ex::Expr)
     end
 end
 
-dottify(s, t, u...) = dottify(Expr(:(.), s, QuoteNode(t)), u...)
-dottify(s) = s
-
 function replace_value(sym::Symbol)
     s = Symbol(sym, :_us)
     if !(isdefined(UnitfulUS, s) && ustrcheck_bool(getfield(UnitfulUS, s)))
